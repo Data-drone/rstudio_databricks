@@ -28,4 +28,6 @@ docker run --rm -p 8787:8787 -e PASSWORD=<set a password> datadrone/rstudio_dbsq
 
 ```
 
-login to image with: rstudio / <the password you set>
+login to image with 
+username: rstudio
+password: the-password-you-set-in-the-docker-run-command
