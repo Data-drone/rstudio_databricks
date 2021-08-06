@@ -24,6 +24,9 @@ USER rstudio
 
 ## Copy over R project
 COPY --chown=rstudio Example_Code/test_connection.R /home/rstudio/test_connection.R
+COPY --chown=rstudio Example_Code/install_libraries.R /home/rstudio/install_libraries.R
+
+RUN r /home/rstudio/install_libraries.R
 
 USER root
 
@@ -32,12 +35,4 @@ USER root
 ENV DBSQL_HOST=<adb-xxyyzzzzzzzz.azuredatabricks.net>
 ENV DBSQL_USERTOKEN=<my_user_token>
 ENV DBSQL_HTTPPATH=</sql/1.0/endpoints/example>
-
-# not needed
-#cat simba.sparkodbc.ini
-# add
-# ODBCInstLib=/usr/lib/libiodbcinst.dylib
-# DriverManagerEncoding=UTF-16
-
-# scripts should go in the /home/rstudio folder
 

@@ -1,5 +1,3 @@
-install.packages("odbc")
-
 library(DBI)
 library(tidyverse)
 library(dplyr)
